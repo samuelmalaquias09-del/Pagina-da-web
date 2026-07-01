@@ -12,3 +12,4 @@
 Falta de criterio unificado: O que e considerado uma "carga faltosa" ou "intensidade excessiva" pode variar de um arbitro para outro, ou ate de uma competicao para outra (como a diferenca de criterios entre a America do Sul e a Europa).
 
 A regra da mao na bola: Esta e, sem duvida, a regra que mais sofre alteracoes e gera debates. Avaliar a "intencao", a "posicao antinatural do corpo" ou o "movimento de recolha" ainda depende puramente da interpretacao humana, mesmo revendo o lance em camera lenta.
+
