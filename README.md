@@ -13,3 +13,6 @@ Falta de criterio unificado: O que e considerado uma "carga faltosa" ou "intensi
 
 A regra da mao na bola: Esta e, sem duvida, a regra que mais sofre alteracoes e gera debates. Avaliar a "intencao", a "posicao antinatural do corpo" ou o "movimento de recolha" ainda depende puramente da interpretacao humana, mesmo revendo o lance em camera lenta.
 
+
+A regra da mao na bola: Esta e, sem duvida, a regra que mais sofre alteracoes e gera debates. Avaliar a "intencao", a "posicao antinatural do corpo" ou o "movimento de recolha" ainda depende puramente da interpretacao humana, mesmo revendo o lance em camera lenta.
+
