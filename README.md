@@ -1,17 +1,22 @@
-# Oficial Fut Varzea  
-<h1>Erros Futeboliticos Antigos e de Agora </h1>
+ # Oficial Fut Várzea
 
-<p>Voce sabia que um dos mais erros de um jogo de futebol pode ser um erro do arbitro:
+# Erros Futebolísticos Antigos e de Agora
 
-    O Por que ?
-<h2> R: Podendo ser  como erros de vista erros, o propio juiz, como pegando a bola nas pernas dele, ou uma visao nao vista.
-   
-  >Agora na moderdernidae tem erros sera ?
-<h3> <A maior parte das polemicas no futebol moderno nao decorre de erros geograficos (como se a bola entrou ou nao, ou se estava impedido), mas sim de lances subjetivos.
-e de Tecnologia
+Você sabia que um dos maiores erros em um jogo de futebol pode vir do próprio árbitro?
 
-A regra da mao na bola: Esta e, sem duvida, a regra que mais sofre alteracoes e gera debates. Avaliar a "intencao", a "posicao antinatural do corpo" ou o "movimento de recolha" ainda depende puramente da interpretacao humana, mesmo revendo o lance em camera lenta.
+### O Por quê?
+**R:** Podendo ser falhas de visão do próprio juiz, a bola batendo nas pernas dele sem querer, ou um lance não visto no momento da jogada.
 
+---
 
-A regra da mao na bola: Esta e, sem duvida, a regra que mais sofre alteracoes e gera debates. Avaliar a "intencao", a "posicao antinatural do corpo" ou o "movimento de recolha" ainda depende puramente da interpretacao humana, mesmo revendo o lance em camera lenta.
+### Agora na modernidade, ainda existem erros?
+A maior parte das polêmicas no futebol moderno não decorre de erros geográficos (como se a bola entrou ou não, ou se o jogador estava impedido), mas sim de **lances subjetivos**.
 
+#### Falta de critério unificado:
+O que é considerado uma "carga faltosa" ou "intensidade excessiva" pode variar de um árbitro para outro, ou até de uma competição para outra (como a diferença de critérios entre a América do Sul e a Europa).
+
+#### A regra da mão na bola:
+Esta é, sem dúvida, a regra que mais sofre alterações e gera debates. Avaliar a *"intenção"*, a *"posição antinatural do corpo"* ou o *"movimento de recolhimento"* ainda depende puramente da interpretação humana, mesmo revendo o lance em câmera lenta no VAR.
+
+---
+*Projeto da disciplina de Tecnologia*

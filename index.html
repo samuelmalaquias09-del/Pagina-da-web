@@ -1,18 +1,18 @@
 
-<!DOCTYPE html>
-<html lang="PT-BR">
+  <!DOCTYPE html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Futebol Desvendado</title>
   <style>
-    
+  
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f4f4f9;
-      color: #333;
+      color: #333333;
     }
 
     
@@ -20,28 +20,30 @@
       background-color: #001219;
       color: #ffffff;
       text-align: center;
-      padding: 30px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.2rem;
+      font-size: 2rem;
     }
 
     header p {
       color: #ee9b00;
       font-weight: bold;
-      margin-top: 5px;
+      margin-top: 10px;
     }
 
-    /* Conteúdo principal */
+    
     main {
       max-width: 800px;
-      margin: 30px auto;
+      margin: 20px auto;
       padding: 20px;
       background-color: #ffffff;
       border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     h2 {
@@ -55,20 +57,19 @@
       line-height: 1.6;
     }
 
-    /* Imagem */
-    .imagem-conteudo {
+    
+    .imagem-arbitro {
       width: 100%;
       max-width: 500px;
       display: block;
-      margin: 25px auto;
-      border-radius: 6px;
+      margin: 20px auto;
+      border-radius: 8px;
     }
-
-    /* Seção de Avaliação (Interatividade) */
+    
     .interacao {
       margin-top: 30px;
       padding-top: 20px;
-      border-top: 1px solid #ddd;
+      border-top: 1px solid #e0e0e0;
       text-align: center;
     }
 
@@ -90,7 +91,7 @@
 
     .btn-curtir:hover {
       background-color: #0a9396;
-      color: #fff;
+      color: #ffffff;
     }
 
     .btn-descurtir {
@@ -100,7 +101,7 @@
 
     .btn-descurtir:hover {
       background-color: #ae2012;
-      color: #fff;
+      color: #ffffff;
     }
 
     
@@ -108,7 +109,7 @@
       background-color: #001219;
       color: #ffffff;
       text-align: center;
-      padding: 15px;
+      padding: 20px;
       margin-top: 40px;
       font-size: 0.9rem;
     }
@@ -125,7 +126,7 @@
     <p>Você sabia que um dos maiores erros em um jogo de futebol pode vir do próprio árbitro?</p>
 
     <h2>O Por quê?</h2>
-    <p>Erros antigos podiam ser falhas de visão do próprio juiz, a bola batendo nas pernas dele sem querer ou lances que ninguém conseguia enxergar direito sem a tecnologia.</p>
+    <p>Podendo ser falhas de visão do próprio juiz, como a bola batendo nas pernas dele sem querer, ou um lance não visto no momento da jogada.</p>
 
     <h2>Agora na modernidade, ainda tem erros?</h2>
     <p>A maior parte das polêmicas no futebol moderno não decorre de erros geográficos (como se a bola entrou ou não, ou se estava impedido), mas sim de lances subjetivos.</p>
@@ -136,16 +137,16 @@
     <h2>A regra da mão na bola:</h2>
     <p>Esta é, sem dúvida, a regra que mais sofre alterações e gera debates. Avaliar a "intenção", a "posição antinatural do corpo" ou o "movimento de recolhimento" ainda depende puramente da interpretação humana, mesmo revendo o lance em câmera lenta.</p>
 
-    <img src="arbitro.png" alt="Árbitro segurando bandeira amarela" class="imagem-conteudo">
+    <img src="arbitro.png" alt="Árbitro segurando bandeira amarela" class="imagem-arbitro">
 
-  
+    
     <div class="interacao">
-      <h3>O que achou do artigo?</h3>
+      <h3>O que achou do post?</h3>
       <button class="btn-curtir" onclick="curtir()">
-        👍 Gostei (<span id="count-likes">0</span>)
+        👍 Gostei (<span id="likes">0</span>)
       </button>
       <button class="btn-descurtir" onclick="descurtir()">
-        👎 Não gostei (<span id="count-dislikes">0</span>)
+        👎 Não gostei (<span id="dislikes">0</span>)
       </button>
     </div>
   </main>
@@ -154,21 +155,21 @@
     <p>Projeto de Tecnologia - 1º Ano do Ensino Médio | Fut Várzea</p>
   </footer>
 
-
+  
   <script>
-    let likes = 0;
-    let dislikes = 0;
+    let totalLikes = 0;
+    let totalDislikes = 0;
 
     function curtir() {
-      likes++;
-      document.getElementById('count-likes').innerText = likes;
+      totalLikes++;
+      document.getElementById('likes').innerText = totalLikes;
     }
 
     function descurtir() {
-      dislikes++;
-      document.getElementById('count-dislikes').innerText = dislikes;
+      totalDislikes++;
+      document.getElementById('dislikes').innerText = totalDislikes;
     }
   </script>
 
 </body>
-</html>
+ </html>
