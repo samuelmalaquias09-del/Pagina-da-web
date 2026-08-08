@@ -1,22 +1,175 @@
- # Oficial Fut Várzea
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Futebol Desvendado</title>
+  <style>
+    /* Estilos Gerais */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333333;
+    }
 
-# Erros Futebolísticos Antigos e de Agora
+    /* Cabeçalho */
+    header {
+      background-color: #001219;
+      color: #ffffff;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px;
+    }
 
-Você sabia que um dos maiores erros em um jogo de futebol pode vir do próprio árbitro?
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
 
-### O Por quê?
-**R:** Podendo ser falhas de visão do próprio juiz, a bola batendo nas pernas dele sem querer, ou um lance não visto no momento da jogada.
+    header p {
+      color: #ee9b00;
+      font-weight: bold;
+      margin-top: 10px;
+    }
 
----
+    /* Conteúdo Principal */
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
 
-### Agora na modernidade, ainda existem erros?
-A maior parte das polêmicas no futebol moderno não decorre de erros geográficos (como se a bola entrou ou não, ou se o jogador estava impedido), mas sim de **lances subjetivos**.
+    h2 {
+      color: #001219;
+      border-bottom: 2px solid #005f73;
+      padding-bottom: 5px;
+      margin-top: 25px;
+    }
 
-#### Falta de critério unificado:
-O que é considerado uma "carga faltosa" ou "intensidade excessiva" pode variar de um árbitro para outro, ou até de uma competição para outra (como a diferença de critérios entre a América do Sul e a Europa).
+    p {
+      line-height: 1.6;
+    }
 
-#### A regra da mão na bola:
-Esta é, sem dúvida, a regra que mais sofre alterações e gera debates. Avaliar a *"intenção"*, a *"posição antinatural do corpo"* ou o *"movimento de recolhimento"* ainda depende puramente da interpretação humana, mesmo revendo o lance em câmera lenta no VAR.
+    /* Imagem */
+    .imagem-arbitro {
+      width: 100%;
+      max-width: 500px;
+      display: block;
+      margin: 20px auto;
+      border-radius: 8px;
+    }
 
----
-*Projeto da disciplina de Tecnologia*
+    /* Seção de Avaliação (Interação) */
+    .interacao {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #e0e0e0;
+      text-align: center;
+    }
+
+    .btn-curtir, .btn-descurtir {
+      font-size: 1rem;
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.2s;
+    }
+
+    .btn-curtir {
+      background-color: #94d2bd;
+      color: #001219;
+    }
+
+    .btn-curtir:hover {
+      background-color: #0a9396;
+      color: #ffffff;
+    }
+
+    .btn-descurtir {
+      background-color: #e9d8a6;
+      color: #001219;
+    }
+
+    .btn-descurtir:hover {
+      background-color: #ae2012;
+      color: #ffffff;
+    }
+
+    /* Rodapé */
+    footer {
+      background-color: #001219;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Erros Futebolísticos Antigos e de Agora</h1>
+    <p># Oficial Fut Várzea</p>
+  </header>
+
+  <main>
+    <p>Você sabia que um dos maiores erros em um jogo de futebol pode vir do próprio árbitro?</p>
+
+    <h2>O Por quê?</h2>
+    <p>Podendo ser falhas de visão do próprio juiz, como a bola batendo nas pernas dele sem querer, ou um lance não visto no momento da jogada.</p>
+
+    <h2>Agora na modernidade, ainda tem erros?</h2>
+    <p>A maior parte das polêmicas no futebol moderno não decorre de erros geográficos (como se a bola entrou ou não, ou se estava impedido), mas sim de lances subjetivos.</p>
+
+    <h2>Falta de critério unificado:</h2> 
+    <p>O que é considerado uma "carga faltosa" ou "intensidade excessiva" pode variar de um árbitro para outro, ou até de uma competição para outra (como a diferença de critérios entre a América do Sul e a Europa).</p>
+
+    <h2>A regra da mão na bola:</h2>
+    <p>Esta é, sem dúvida, a regra que mais sofre alterações e gera debates. Avaliar a "intenção", a "posição antinatural do corpo" ou o "movimento de recolhimento" ainda depende puramente da interpretação humana, mesmo revendo o lance em câmera lenta.</p>
+
+    <img src="arbitro.png" alt="Árbitro segurando bandeira amarela" class="imagem-arbitro">
+
+    <!-- Botões de Like / Dislike -->
+    <div class="interacao">
+      <h3>O que achou do post?</h3>
+      <button class="btn-curtir" onclick="curtir()">
+        👍 Gostei (<span id="likes">0</span>)
+      </button>
+      <button class="btn-descurtir" onclick="descurtir()">
+        👎 Não gostei (<span id="dislikes">0</span>)
+      </button>
+    </div>
+  </main>
+
+  <footer>
+    <p>Projeto de Tecnologia - 1º Ano do Ensino Médio | Fut Várzea</p>
+  </footer>
+
+  <!-- Código JavaScript dos Botões -->
+  <script>
+    let totalLikes = 0;
+    let totalDislikes = 0;
+
+    function curtir() {
+      totalLikes++;
+      document.getElementById('likes').innerText = totalLikes;
+    }
+
+    function descurtir() {
+      totalDislikes++;
+      document.getElementById('dislikes').innerText = totalDislikes;
+    }
+  </script>
+
+</body>
+</html>
