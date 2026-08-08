@@ -1,87 +1,100 @@
 
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Futebol Desvendado</title>
   <style>
-  
-    body {
-      font-family: Arial, sans-serif;
+    /* Estilos Gerais */
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f9;
-      color: #333333;
     }
 
-    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1f1fc7;
+      margin: 10;
+      padding: 15;
+      color: #333333;
+      line-height: 1.6;
+    }
+
+    /* Cabeçalho */
     header {
       background-color: #001219;
       color: #ffffff;
       text-align: center;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px;
+      padding: 40px 20px;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 2rem;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
     }
 
     header p {
       color: #ee9b00;
       font-weight: bold;
-      margin-top: 10px;
+      font-size: 1.1rem;
     }
 
-    
+    /* Conteúdo Principal */
     main {
       max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
+      margin: 30px auto;
+      padding: 30px 20px;
       background-color: #ffffff;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     }
 
     h2 {
       color: #001219;
       border-bottom: 2px solid #005f73;
-      padding-bottom: 5px;
+      padding-bottom: 6px;
       margin-top: 25px;
+      margin-bottom: 10px;
     }
 
     p {
-      line-height: 1.6;
+      margin-bottom: 15px;
+      font-size: 1rem;
     }
 
-    
+    /* Imagem do Árbitro */
     .imagem-arbitro {
       width: 100%;
       max-width: 500px;
       display: block;
-      margin: 20px auto;
+      margin: 30px auto;
       border-radius: 8px;
     }
-    
+
+    /* Seção de Interação (Botões de Curtida) */
     .interacao {
-      margin-top: 30px;
+      margin-top: 40px;
       padding-top: 20px;
       border-top: 1px solid #e0e0e0;
       text-align: center;
     }
 
+    .interacao h3 {
+      margin-bottom: 15px;
+      color: #001219;
+    }
+
     .btn-curtir, .btn-descurtir {
       font-size: 1rem;
-      padding: 10px 20px;
+      padding: 12px 24px;
       margin: 5px;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
       cursor: pointer;
       font-weight: bold;
-      transition: background-color 0.2s;
+      transition: background-color 0.2s, transform 0.1s;
     }
 
     .btn-curtir {
@@ -104,7 +117,11 @@
       color: #ffffff;
     }
 
-    
+    .btn-curtir:active, .btn-descurtir:active {
+      transform: scale(0.98);
+    }
+
+    /* Rodapé */
     footer {
       background-color: #001219;
       color: #ffffff;
@@ -126,10 +143,10 @@
     <p>Você sabia que um dos maiores erros em um jogo de futebol pode vir do próprio árbitro?</p>
 
     <h2>O Por quê?</h2>
-    <p>Podendo ser falhas de visão do próprio juiz, como a bola batendo nas pernas dele sem querer, ou um lance não visto no momento da jogada.</p>
+    <p>Erros antigos podiam ser falhas de visão do próprio juiz, como a bola batendo nas pernas dele sem querer, ou um lance não visto no momento da jogada.</p>
 
     <h2>Agora na modernidade, ainda tem erros?</h2>
-    <p>A maior parte das polêmicas no futebol moderno não decorre de erros geográficos (como se a bola entrou ou não, ou se estava impedido), mas sim de lances subjetivos.</p>
+    <p>A maior parte das polêmicas no futebol moderno não decorre de erros geográficos (como se a bola entrou ou não, ou se o jogador estava impedido), mas sim de lances subjetivos.</p>
 
     <h2>Falta de critério unificado:</h2> 
     <p>O que é considerado uma "carga faltosa" ou "intensidade excessiva" pode variar de um árbitro para outro, ou até de uma competição para outra (como a diferença de critérios entre a América do Sul e a Europa).</p>
@@ -139,9 +156,9 @@
 
     <img src="arbitro.png" alt="Árbitro segurando bandeira amarela" class="imagem-arbitro">
 
-    
+    <!-- Seção de Votação/Curtidas -->
     <div class="interacao">
-      <h3>O que achou do post?</h3>
+      <h3>O que achou do artigo?</h3>
       <button class="btn-curtir" onclick="curtir()">
         👍 Gostei (<span id="likes">0</span>)
       </button>
@@ -155,7 +172,7 @@
     <p>Projeto de Tecnologia - 1º Ano do Ensino Médio | Fut Várzea</p>
   </footer>
 
-  
+  <!-- Lógica JavaScript dos Botões -->
   <script>
     let totalLikes = 0;
     let totalDislikes = 0;
@@ -172,4 +189,4 @@
   </script>
 
 </body>
- </html>
+</html>
