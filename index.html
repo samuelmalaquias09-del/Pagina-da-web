@@ -1,52 +1,174 @@
 
 <!DOCTYPE html>
-<html lang="PT/br">
+<html lang="PT-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Futebol Desvendarde</title>
+  <title>Futebol Desvendado</title>
+  <style>
+    
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    
+    header {
+      background-color: #001219;
+      color: #ffffff;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    header p {
+      color: #ee9b00;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    /* Conteúdo principal */
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #001219;
+      border-bottom: 2px solid #005f73;
+      padding-bottom: 5px;
+      margin-top: 25px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    /* Imagem */
+    .imagem-conteudo {
+      width: 100%;
+      max-width: 500px;
+      display: block;
+      margin: 25px auto;
+      border-radius: 6px;
+    }
+
+    /* Seção de Avaliação (Interatividade) */
+    .interacao {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+      text-align: center;
+    }
+
+    .btn-curtir, .btn-descurtir {
+      font-size: 1rem;
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.2s;
+    }
+
+    .btn-curtir {
+      background-color: #94d2bd;
+      color: #001219;
+    }
+
+    .btn-curtir:hover {
+      background-color: #0a9396;
+      color: #fff;
+    }
+
+    .btn-descurtir {
+      background-color: #e9d8a6;
+      color: #001219;
+    }
+
+    .btn-descurtir:hover {
+      background-color: #ae2012;
+      color: #fff;
+    }
+
+    
+    footer {
+      background-color: #001219;
+      color: #ffffff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-    <header>
-      {
-<background-color: #001219;
-color: #001219;
-text-align: center;
-max-width: 900px;
-margin: 0 auto;
-padding: 40px;
-  }
-   
-    <h1>Erros Futeboliticos Antigos e de Agora </h1>
-      <p># Oficial Fut Varzea </p>
-    </header>
- {
-<background-color: #001219;
-color: #001219;
-text-align: center;
-max-width: 900px;
-margin: 0 auto;
-padding: 40px;
-  }
-</div >
-    <main>
-      <p>Você sabia que um dos mais erros de um jogo de futebol pode ser um erro do arbitro:</p>
 
-      <h2> O Por que ?</h2>
-      <p>Podendo ser  como erros de vista erros, o propio juiz, como pegando a bola nas pernas dele, ou uma visao nao vista.</p>
+  <header>
+    <h1>Erros Futebolísticos Antigos e de Agora</h1>
+    <p># Oficial Fut Várzea</p>
+  </header>
 
-      <h2> Agora na moderdernidade tem erros sera ?</h2>
-      <p> A maior parte das polemicas no futebol moderno nao decorre de erros geograficos (como se a bola entrou ou nao, estava impedido), mas sim de lances subjetivos.</p>
+  <main>
+    <p>Você sabia que um dos maiores erros em um jogo de futebol pode vir do próprio árbitro?</p>
 
-      <h2>Falta de criterio unificado:</h2> 
-      <p>O que e considerado uma "carga faltosa" ou "intensidade excessiva" pode variar de um arbitro para outro, ou ate de uma competicao para outra (como a diferenca de criterios entre a America do Sul e a Europa).</p>
+    <h2>O Por quê?</h2>
+    <p>Erros antigos podiam ser falhas de visão do próprio juiz, a bola batendo nas pernas dele sem querer ou lances que ninguém conseguia enxergar direito sem a tecnologia.</p>
 
-      <h2>A regra da mao na bola:</h2>
-      <p> Esta e, sem duvida, a regra que mais sofre alteracoes e gera debates. Avaliar a "intencao", a "posicao anti natural do corpo" ou o "movimento de recolha" ainda depende puramente da interpretacao humana, mesmo revendo o lance em camera lenta.</p>
-      <img src="arbitro.png" alt="Ábitro segurano bandeira amarela">
-    </main>
+    <h2>Agora na modernidade, ainda tem erros?</h2>
+    <p>A maior parte das polêmicas no futebol moderno não decorre de erros geográficos (como se a bola entrou ou não, ou se estava impedido), mas sim de lances subjetivos.</p>
+
+    <h2>Falta de critério unificado:</h2> 
+    <p>O que é considerado uma "carga faltosa" ou "intensidade excessiva" pode variar de um árbitro para outro, ou até de uma competição para outra (como a diferença de critérios entre a América do Sul e a Europa).</p>
+
+    <h2>A regra da mão na bola:</h2>
+    <p>Esta é, sem dúvida, a regra que mais sofre alterações e gera debates. Avaliar a "intenção", a "posição antinatural do corpo" ou o "movimento de recolhimento" ainda depende puramente da interpretação humana, mesmo revendo o lance em câmera lenta.</p>
+
+    <img src="arbitro.png" alt="Árbitro segurando bandeira amarela" class="imagem-conteudo">
+
+  
+    <div class="interacao">
+      <h3>O que achou do artigo?</h3>
+      <button class="btn-curtir" onclick="curtir()">
+        👍 Gostei (<span id="count-likes">0</span>)
+      </button>
+      <button class="btn-descurtir" onclick="descurtir()">
+        👎 Não gostei (<span id="count-dislikes">0</span>)
+      </button>
+    </div>
+  </main>
+
   <footer>
+    <p>Projeto de Tecnologia - 1º Ano do Ensino Médio | Fut Várzea</p>
+  </footer>
 
-    </footer>
-</body> </html>
-<header>
+
+  <script>
+    let likes = 0;
+    let dislikes = 0;
+
+    function curtir() {
+      likes++;
+      document.getElementById('count-likes').innerText = likes;
+    }
+
+    function descurtir() {
+      dislikes++;
+      document.getElementById('count-dislikes').innerText = dislikes;
+    }
+  </script>
+
+</body>
+</html>
