@@ -1,13 +1,12 @@
 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">sa
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Futebol Desvendado</title>
   <style>
-   
-     {
+    * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -16,13 +15,10 @@
     body {
       font-family: Arial, sans-serif;
       background-color: #0bc577;
-      margin: 10;
-      padding: 15;
       color: #333333;
       line-height: 1.6;
     }
 
-   
     header {
       background-color: #001219;
       color: #ffffff;
@@ -32,7 +28,7 @@
 
     header h1 {
       font-size: 2.2rem;
-      margin-bottom: 11px;
+      margin-bottom: 10px;
     }
 
     header p {
@@ -41,43 +37,84 @@
       font-size: 1.1rem;
     }
 
-    
     main {
-      max-width: 800px;
+      max-width: 1000px;
       margin: 30px auto;
-      padding: 30px 20px;
+      padding: 20px;
+    }
+
+    .intro-card {
       background-color: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    }
-
-    h2 {
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: bold;
       color: #001219;
-      border-bottom: 2px solid #005f73;
-      padding-bottom: 6px;
-      margin-top: 25px;
-      margin-bottom: 10px;
+      margin-bottom: 30px;
     }
 
-    p {
+    /* Grid para organizar os cards em formato de quadrados/caixas */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .card h2 {
+      color: #001219;
+      border-bottom: 3px solid #005f73;
+      padding-bottom: 8px;
       margin-bottom: 15px;
-      font-size: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #444444;
+    }
+
+    .card-imagem {
+      grid-column: 1 / -1;
+      text-align: center;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .imagem-arbitro {
       width: 100%;
-      max-width: 500px;
-      display: block;
-      margin: 30px auto;
+      max-width: 450px;
       border-radius: 8px;
+      height: auto;
     }
 
-
     .interacao {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #e0e0e0;
+      grid-column: 1 / -1;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       text-align: center;
+      margin-top: 10px;
     }
 
     .interacao h3 {
@@ -107,20 +144,19 @@
     }
 
     .btn-descurtir {
-      background-color: #85d176;
+      background-color: #e9d8a6;
       color: #001219;
     }
 
     .btn-descurtir:hover {
-      background-color: #0c217c;
-      color: #000000;
+      background-color: #ee9b00;
+      color: #ffffff;
     }
 
     .btn-curtir:active, .btn-descurtir:active {
       transform: scale(0.98);
     }
 
-    
     footer {
       background-color: #001219;
       color: #ffffff;
@@ -139,31 +175,44 @@
   </header>
 
   <main>
-    <p>Você sabia que um dos maiores erros em um jogo de futebol pode vir do próprio árbitro?</p>
+    <div class="intro-card">
+      <p>Você sabia que um dos maiores erros em um jogo de futebol pode vir do próprio árbitro?</p>
+    </div>
 
-    <h2>O Por quê?</h2>
-    <p>Erros antigos podiam ser falhas de visão do próprio juiz, como a bola batendo nas pernas dele sem querer, ou um lance não visto no momento da jogada.</p>
+    <div class="grid-container">
+      <div class="card">
+        <h2>O Por quê?</h2>
+        <p>Erros antigos podiam ser falhas de visão do próprio juiz, como a bola batendo nas pernas dele sem querer, ou um lance não visto no momento da jogada.</p>
+      </div>
 
-    <h2>Agora na modernidade, ainda tem erros?</h2>
-    <p>A maior parte das polêmicas no futebol moderno não decorre de erros geográficos (como se a bola entrou ou não, ou se o jogador estava impedido), mas sim de lances subjetivos.</p>
+      <div class="card">
+        <h2>Agora na modernidade, ainda tem erros?</h2>
+        <p>A maior parte das polêmicas no futebol moderno não decorre de erros geográficos (como se a bola entrou ou não, ou se o jogador estava impedido), mas sim de lances subjetivos.</p>
+      </div>
 
-    <h2>Falta de critério unificado:</h2> 
-    <p>O que é considerado uma "carga faltosa" ou "intensidade excessiva" pode variar de um árbitro para outro, ou até de uma competição para outra (como a diferença de critérios entre a América do Sul e a Europa).</p>
+      <div class="card">
+        <h2>Falta de critério unificado</h2>
+        <p>O que é considerado uma "carga faltosa" ou "intensidade excessiva" pode variar de um árbitro para outro, ou até de uma competição para outra (como a diferença de critérios entre a América do Sul e a Europa).</p>
+      </div>
 
-    <h2>A regra da mão na bola:</h2>
-    <p>Esta é, sem dúvida, a regra que mais sofre alterações e gera debates. Avaliar a "intenção", a "posição antinatural do corpo" ou o "movimento de recolhimento" ainda depende puramente da interpretação humana, mesmo revendo o lance em câmera lenta.</p>
+      <div class="card">
+        <h2>A regra da mão na bola</h2>
+        <p>Esta é, sem dúvida, a regra que mais sofre alterações e gera debates. Avaliar a "intenção", a "posição antinatural do corpo" ou o "movimento de recolhimento" ainda depende puramente da interpretação humana, mesmo revendo o lance em câmera lenta.</p>
+      </div>
 
-    <img src="arbitro.png" alt="Árbitro segurando bandeira amarela" class="imagem-arbitro">
+      <div class="card-imagem">
+        <img src="arbitro.png" alt="Árbitro segurando bandeira amarela" class="imagem-arbitro">
+      </div>
 
-   
-    <div class="interacao">
-      <h3>O que achou do artigo?</h3>
-      <button class="btn-curtir" onclick="curtir()">
-        👍 Gostei (<span id="likes">0</span>)
-      </button>
-      <button class="btn-descurtir" onclick="descurtir()">
-        👎 Não gostei (<span id="dislikes">0</span>)
-      </button>
+      <div class="interacao">
+        <h3>O que achou do artigo?</h3>
+        <button class="btn-curtir" onclick="curtir()">
+          👍 Gostei (<span id="likes">0</span>)
+        </button>
+        <button class="btn-descurtir" onclick="descurtir()">
+          👎 Não gostei (<span id="dislikes">0</span>)
+        </button>
+      </div>
     </div>
   </main>
 
@@ -171,7 +220,6 @@
     <p>Projeto de Tecnologia - 1º Ano do Ensino Médio | Fut Várzea</p>
   </footer>
 
- 
   <script>
     let totalLikes = 0;
     let totalDislikes = 0;
@@ -189,3 +237,4 @@
 
 </body>
 </html>
+
