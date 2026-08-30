@@ -1,240 +1,495 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Futebol Desvendado</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Jornada — Descubra o Seu Novo Caminho</title>
+    <style>
+        :root {
+            --bg-color: #08090a;
+            --card-bg: rgba(18, 22, 20, 0.6);
+            --border-color: rgba(0, 230, 118, 0.15);
+            --text-main: #f0f4f1;
+            --text-muted: #8b9b90;
+            --accent-emerald: #00e676;
+            --accent-glow: rgba(0, 230, 118, 0.25);
+            --gold-accent: #d4af37;
+        }
 
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #0bc577;
-      color: #333333;
-      line-height: 1.6;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
 
-    header {
-      background-color: #001219;
-      color: #ffffff;
-      text-align: center;
-      padding: 40px 20px;
-    }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 50% 20%, rgba(0, 230, 118, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.03) 0%, transparent 40%);
+        }
 
-    header h1 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
-    }
+        /* Container Layout */
+        .page-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
 
-    header p {
-      color: #ee9b00;
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
+        .hidden {
+            display: none !important;
+        }
 
-    main {
-      max-width: 1000px;
-      margin: 30px auto;
-      padding: 20px;
-    }
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
 
-    .intro-card {
-      background-color: #ffffff;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #001219;
-      margin-bottom: 30px;
-    }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
+        /* Ambient Lighting / Atmosphere */
+        .ambient-light {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: var(--accent-emerald);
+            filter: blur(150px);
+            opacity: 0.08;
+            pointer-events: none;
+            border-radius: 50%;
+            z-index: 0;
+        }
 
-    .card {
-      background-color: #ffffff;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
+        /* Page 1: Suspense Styles */
+        .pre-title {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-    }
+        .main-title-suspense {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.25;
+            letter-spacing: -0.5px;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            background: linear-gradient(180deg, #FFFFFF 0%, #B0C4B1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    .card h2 {
-      color: #001219;
-      border-bottom: 3px solid #005f73;
-      padding-bottom: 8px;
-      margin-bottom: 15px;
-      font-size: 1.3rem;
-    }
+        .sub-description {
+            color: var(--text-muted);
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+            max-width: 620px;
+            margin: 0 auto 1.5rem auto;
+            text-align: center;
+            font-weight: 300;
+        }
 
-    .card p {
-      font-size: 0.95rem;
-      color: #444444;
-    }
+        .suspense-divider {
+            width: 1px;
+            height: 60px;
+            background: linear-gradient(180deg, transparent, var(--accent-emerald), transparent);
+            margin: 2.5rem auto;
+            position: relative;
+        }
 
-    .card-imagem {
-      grid-column: 1 / -1;
-      text-align: center;
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
+        .suspense-divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 6px;
+            height: 6px;
+            background: var(--accent-emerald);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-emerald);
+        }
 
-    .imagem-arbitro {
-      width: 20%;
-      max-width: 400px;
-      border-radius: 9px;
-      height: auto;
-    }
+        .call-question {
+            font-size: 1rem;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
 
-    .interacao {
-      grid-column: 1 / -1;
-      background-color: #ffffff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      margin-top: 10px;
-    }
+        /* Buttons & Interactions */
+        .btn-cta {
+            background: linear-gradient(135deg, rgba(0, 230, 118, 0.1), rgba(0, 230, 118, 0.02));
+            border: 1px solid var(--accent-emerald);
+            color: var(--accent-emerald);
+            padding: 1.2rem 2.8rem;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 0 20px rgba(0, 230, 118, 0.1);
+            position: relative;
+            z-index: 10;
+        }
 
-    .interacao h3 {
-      margin-bottom: 15px;
-      color: #001219;
-    }
+        .btn-cta:hover {
+            background: var(--accent-emerald);
+            color: #000;
+            box-shadow: 0 0 35px rgba(0, 230, 118, 0.4);
+            transform: translateY(-3px);
+        }
 
-    .btn-curtir, .btn-descurtir {
-      font-size: 1rem;
-      padding: 12px 24px;
-      margin: 5px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background-color 0.2s, transform 0.1s;
-    }
+        .btn-subtext {
+            display: block;
+            margin-top: 0.8rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
 
-    .btn-curtir {
-      background-color: #94d2bd;
-      color: #001219;
-    }
+        /* Page 2: Revelation Styles */
+        .section-tag {
+            color: var(--accent-emerald);
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
 
-    .btn-curtir:hover {
-      background-color: #0a9396;
-      color: #ffffff;
-    }
+        .revelation-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
 
-    .btn-descurtir {
-      background-color: #e9d8a6;
-      color: #001219;
-    }
+        .revelation-title {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(180deg, #FFFFFF 0%, #D0E0D5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    .btn-descurtir:hover {
-      background-color: #ee9b00;
-      color: #ffffff;
-    }
+        .content-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            backdrop-filter: blur(10px);
+            text-align: left;
+            width: 100%;
+        }
 
-    .btn-curtir:active, .btn-descurtir:active {
-      transform: scale(0.98);
-    }
+        .card-title {
+            font-size: 1.4rem;
+            color: var(--accent-emerald);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
 
-    footer {
-      background-color: #001219;
-      color: #ffffff;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      font-size: 0.9rem;
-    }
-  </style>
+        /* Grid System for Benefits */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            width: 100%;
+            margin-bottom: 2.5rem;
+        }
+
+        .benefit-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.8rem;
+            text-align: left;
+        }
+
+        .benefit-box h4 {
+            color: var(--accent-emerald);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* 3 Steps Section */
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            width: 100%;
+            margin-bottom: 3rem;
+        }
+
+        .step-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .step-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--gold-accent);
+            margin-bottom: 0.3rem;
+        }
+
+        /* Schedule Table */
+        .routine-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .routine-table th, .routine-table td {
+            padding: 0.8rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.95rem;
+        }
+
+        .routine-table th {
+            color: var(--accent-emerald);
+            font-weight: 600;
+        }
+
+        /* Earnings Projection */
+        .earnings-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .earnings-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+
+        .earnings-list span.val {
+            color: var(--accent-emerald);
+            font-weight: 700;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .steps-container {
+                grid-template-columns: 1fr;
+            }
+            .content-card {
+                padding: 1.5rem;
+            }
+            .earnings-list li {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>Erros Futebolísticos Antigos e de Agora</h1>
-    <p># Oficial Fut Várzea</p>
-  </header>
+    <div class="ambient-light" style="top: 10%; left: 50%; transform: translateX(-50%);"></div>
 
-  <main>
-    <div class="intro-card">
-      <p>Você sabia que um dos maiores erros em um jogo de futebol pode vir do próprio árbitro?</p>
-    </div>
+    <!-- ==================== PÁGINA 1: O SUSPENSE ==================== -->
+    <section id="page-1" class="page-container fade-in">
+        <p class="pre-title">ANTES DE CONTINUAR...</p>
+        
+        <h1 class="main-title-suspense">
+            E SE EXISTISSE UM CAMINHO QUE VOCÊ AINDA NÃO ENCONTROU?
+        </h1>
 
-    <div class="grid-container">
-      <div class="card">
-        <h2>O Por quê?</h2>
-        <p>Erros antigos podiam ser falhas de visão do próprio juiz, como a bola batendo nas pernas dele sem querer, ou um lance não visto no momento da jogada.</p>
-      </div>
+        <p class="sub-description">
+            Talvez esteja a poucos passos de descobrir algo que pode mudar radicalmente a forma como enxerga as suas próximas oportunidades financeiras e de vida.
+        </p>
 
-      <div class="card">
-        <h2>Agora na modernidade, ainda tem erros?</h2>
-        <p>A maior parte das polêmicas no futebol moderno não decorre de erros geográficos (como se a bola entrou ou não, ou se o jogador estava impedido), mas sim de lances subjetivos.</p>
-      </div>
+        <p class="sub-description" style="font-size: 0.95rem; color: #6c7c71;">
+            Mas existe uma razão para isto não estar a ser mostrado logo de início.
+        </p>
 
-      <div class="card">
-        <h2>Falta de critério unificado</h2>
-        <p>O que é considerado uma "carga faltosa" ou "intensidade excessiva" pode variar de um árbitro para outro, ou até de uma competição para outra (como a diferença de critérios entre a América do Sul e a Europa).</p>
-      </div>
+        <div class="suspense-divider"></div>
 
-      <div class="card">
-        <h2>A regra da mão na bola</h2>
-        <p>Esta é, sem dúvida, a regra que mais sofre alterações e gera debates. Avaliar a "intenção", a "posição antinatural do corpo" ou o "movimento de recolhimento" ainda depende puramente da interpretação humana, mesmo revendo o lance em câmera lenta.</p>
-      </div>
+        <p class="call-question">Está pronto para dar o próximo passo?</p>
 
-      <div class="card-imagem">
-        <img src="arbitro.png" alt="Árbitro segurando bandeira amarela" class="imagem-arbitro">
-      </div>
-
-      <div class="interacao">
-        <h3>O que achou do artigo?</h3>
-        <button class="btn-curtir" onclick="curtir()">
-          👍 Gostei (<span id="likes">0</span>)
+        <button class="btn-cta" onclick="showPage2()">
+            CONTINUAR A JORNADA &rarr;
         </button>
-        <button class="btn-descurtir" onclick="descurtir()">
-          👎 Não gostei (<span id="dislikes">0</span>)
-        </button>
-      </div>
-    </div>
-  </main>
+        
+        <span class="btn-subtext">Descubra o que vem a seguir.</span>
+    </section>
 
-  <footer>
-    <p>Projeto de Tecnologia - 1º Ano do Ensino Médio | Fut Várzea</p>
-  </footer>
+    <!-- ==================== PÁGINA 2: A REVELAÇÃO ==================== -->
+    <section id="page-2" class="page-container hidden">
+        <div class="revelation-header fade-in">
+            <p class="section-tag">AGORA VOCÊ PODE VER O QUE ESTAVA POR TRÁS DESTA JORNADA</p>
+            <h1 class="revelation-title">O PRÓXIMO PASSO COMEÇA AQUI.</h1>
+            <p class="sub-description">
+                A oportunidade de construir a sua própria liberdade criando e gerindo o seu negócio de SaaS a partir de casa.
+            </p>
+        </div>
 
-  <script>
-    let totalLikes = 0;
-    let totalDislikes = 0;
+        <!-- Bloco de Funcionamento -->
+        <div class="content-card fade-in">
+            <h3 class="card-title">A Transformação do Trabalho em Casa</h3>
+            <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7;">
+                Trabalhar do conforto da sua casa usando o modelo de SaaS (Software como Serviço) permite-lhe eliminar o tempo perdido no trânsito e assumir o controlo total do seu tempo. Aprenda a criar, validar e vender soluções automatizadas que geram receitas recorrentes mês após mês.
+            </p>
+        </div>
 
-    function curtir() {
-      totalLikes++;
-      document.getElementById('likes').innerText = totalLikes;
-    }
+        <!-- 3 Blocos de Benefícios -->
+        <div class="benefits-grid fade-in">
+            <div class="benefit-box">
+                <h4>✓ O que vai descobrir</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">
+                    O método exato para idealizar, desenvolver sem complicações e lançar o seu próprio SaaS lucrativo no mercado.
+                </p>
+            </div>
+            <div class="benefit-box">
+                <h4>✓ Como funciona</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">
+                    Estruturas automatizadas que trabalham 24 horas por dia, permitindo-lhe escalar vendas sem aumentar a sua carga horária.
+                </p>
+            </div>
+            <div class="benefit-box">
+                <h4>✓ O que pode aplicar</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">
+                    Modelos práticos de gestão diária, estratégias de atração de clientes e rotinas de alta produtividade.
+                </p>
+            </div>
+        </div>
 
-    function descurtir() {
-      totalDislikes++;
-      document.getElementById('dislikes').innerText = totalDislikes;
-    }
-  </script>
+        <!-- Jornada em 3 Etapas -->
+        <div class="steps-container fade-in">
+            <div class="step-item">
+                <div class="step-number">01</div>
+                <strong style="display:block; margin-bottom: 5px;">DESCUBRA</strong>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Identifique nichos altamente lucrativos.</span>
+            </div>
+            <div class="step-item">
+                <div class="step-number">02</div>
+                <strong style="display:block; margin-bottom: 5px;">APRENDA</strong>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Construa a sua plataforma passo a passo.</span>
+            </div>
+            <div class="step-item">
+                <div class="step-number">03</div>
+                <strong style="display:block; margin-bottom: 5px;">APLIQUE</strong>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Venda e receba assinaturas recorrentes.</span>
+            </div>
+        </div>
 
+        <!-- Rotina Recomendada -->
+        <div class="content-card fade-in">
+            <h3 class="card-title">Rotina de Alta Produtividade em Casa</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">
+                A chave para o sucesso a trabalhar em casa é ter uma rotina bem regulada para evitar distrações e manter o foco:
+            </p>
+            <table class="routine-table">
+                <thead>
+                    <tr>
+                        <th>Período</th>
+                        <th>Atividade</th>
+                        <th>Foco principal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Manhã (08h - 12h)</strong></td>
+                        <td>Construção & Desenvolvimento</td>
+                        <td>Execução das tarefas de maior prioridade.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tarde (13h30 - 17h30)</strong></td>
+                        <td>Marketing & Atendimento</td>
+                        <td>Atração de clientes e melhorias do serviço.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Noite (A partir das 18h)</strong></td>
+                        <td>Desconexão Total</td>
+                        <td>Descanso, família e lazer consciente.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Projeção Financeira e Persistência -->
+        <div class="content-card fade-in">
+            <h3 class="card-title">Projeção de Ganhos e a Importância de Persistir</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+                O sucesso em modelos de subscrição constrói-se com consistência. Ao não desistir nos primeiros meses, o efeito acumulativo dos assinantes gera uma receita sólida:
+            </p>
+            <ul class="earnings-list">
+                <li>
+                    <span><strong>1º ao 3º Mês:</strong> Fase de Ajuste e Primeiros Clientes</span>
+                    <span class="val">R$ 1.500 a R$ 3.000 / mês</span>
+                </li>
+                <li>
+                    <span><strong>4º ao 6º Mês:</strong> Validação e Escala</span>
+                    <span class="val">R$ 3.500 a R$ 6.000 / mês</span>
+                </li>
+                <li>
+                    <span><strong>Longo Prazo (Consistência):</strong> Recorrência Consolidada</span>
+                    <span class="val">+ R$ 10.000 / mês</span>
+                </li>
+            </ul>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1.2rem; font-style: italic;">
+                "Quem persiste nos primeiros obstáculos é quem colhe a verdadeira liberdade geográfica e financeira."
+            </p>
+        </div>
+
+        <!-- Call To Action Final (Checkout Kiwify) -->
+        <div style="text-align: center; margin-top: 1.5rem; width: 100%;" class="fade-in">
+            <a href="https://pay.kiwify.com.br/Kq2q3Te" class="btn-cta" target="_blank" rel="noopener noreferrer">
+                QUERO COMEÇAR A JORNADA &rarr;
+            </a>
+            <span class="btn-subtext" style="margin-top: 1rem;">
+                Acesso imediativo após a confirmação do pagamento no checkout seguro.
+            </span>
+        </div>
+    </section>
+
+    <script>
+        function showPage2() {
+            const page1 = document.getElementById('page-1');
+            const page2 = document.getElementById('page-2');
+
+            page1.classList.add('hidden');
+            page2.classList.remove('hidden');
+
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 </body>
 </html>
-

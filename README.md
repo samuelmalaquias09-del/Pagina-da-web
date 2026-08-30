@@ -1,34 +1,54 @@
-# ⚽ Futebol Desvendado - Erros Futebolísticos
+# 🚀 Landing Page — A Jornada (SaaS & Liberdade Financeira)
 
-Projeto de Tecnologia desenvolvido para o 1º Ano do Ensino Médio. A aplicação é uma página web interativa que discute a evolução das decisões da arbitragem no futebol, comparando falhas antigas com as polêmicas do futebol moderno e do uso de tecnologias como o VAR.
-
----
-
-## 📌 Sobre o Projeto
-
-O objetivo desta página é apresentar de forma simples e visualmente atrativa como as regras do futebol são interpretadas ao longo do tempo. O conteúdo é dividido em tópicos explicativos organizados em formato de cartões (*cards*).
-
-### Tópicos Abordados no Artigo:
-* **Falhas Antigas:** Erros de visão e interferências físicas acidentais dos árbitros em campo.
-* **Modernidade e Subjetividade:** Como a tecnologia resolveu problemas de posicionamento (impedimentos/bola na linha), mas mantêm discussões sobre lances interpretativos.
-* **Critério Unificado:** A variação de interpretação entre diferentes árbitros e continentes.
-* **Regra da Mão na Bola:** As constantes mudanças na regra e a complexidade na avaliação da intenção do atleta.
+Esta é uma **Landing Page Minimalista de 2 Etapas**, desenvolvida em HTML, CSS e JavaScript puro (Vanilla), desenhada para maximizar a conversão através de curiosidade, suspense emocional e apresentação clara de proposta de valor.
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+## 📋 Estrutura da Página
 
-O projeto foi construído utilizando tecnologias web padrão sem a necessidade de bibliotecas externas:
+### **1. Página 1 — O Suspense (Curiosidade & Conexão)**
+* **Objetivo:** Capturar a atenção imediata do utilizador sem revelar antecipadamente o produto.
+* **Estética:** Fundo escuro premium com luzes difusas em verde-esmeralda e toques dourados.
+* **Ação:** O botão *"CONTINUAR A JORNADA →"* realiza uma transição suave para a revelação na Página 2.
 
-* **HTML5:** Estruturação semântica do conteúdo e elementos interativos.
-* **CSS3:** Estilização responsiva, layout dinâmico em grade (`CSS Grid` e `Flexbox`), efeitos de transição e sombras.
-* **JavaScript (ES6):** Manipulação de DOM para contagem em tempo real das interações de "Gostei" e "Não gostei".
+### **2. Página 2 — A Revelação (Proposta, Rotina e Checkout)**
+* **Objetivo:** Apresentar a solução (como criar e vender o seu próprio SaaS a trabalhar em casa).
+* **Estrutura:**
+  * **A Oportunidade:** Explicação do modelo de negócio recorrente.
+  * **3 Benefícios Clave:** O que vai descobrir, Como funciona e O que aplicar.
+  * **Jornada em 3 Passos:** Descubra ➔ Aprenda ➔ Aplique.
+  * **Tabela de Rotina:** Guia de gestão de tempo diário.
+  * **Projeção de Ganhos:** Estimativas realistas de curto, médio e longo prazo baseadas na persistência.
+  * **Checkout:** Link direto integrado para finalizar a compra no Kiwify (`https://pay.kiwify.com.br/Kq2q3Te`).
 
 ---
 
-## 📂 Estrutura de Arquivos
+## 🛠️ Como Utilizar
 
-```text
-├── index.html       # Arquivo principal com estrutura, estilos e lógica JS
-├── arbitro.png      # Imagem ilustrativa utilizada no artigo
-└── README.md        # Documentação do projeto
+1. Faça o download ou copie os dois ficheiros deste repositório:
+   * `index.html` (Contém todo o código da página com estilos e scripts integrados).
+   * `README.md` (Documentação).
+2. Abra o ficheiro `index.html` em qualquer navegador web para testar localmente.
+
+---
+
+## 🌐 Como Hospedar Gratuitamente
+
+Pode colocar esta página online em menos de 2 minutos utilizando serviços gratuitos:
+
+### **Opção 1: Netlify (Mais fácil)**
+1. Aceda a [netlify.com](https://www.netlify.com/).
+2. Faça login e aceda ao separador **Sites**.
+3. Arraste a pasta que contém o `index.html` para a zona de upload.
+4. O seu site estará online imediatamente!
+
+### **Opção 2: Vercel**
+1. Aceda a [vercel.com](https://vercel.com/).
+2. Crie um novo projeto e importe o ficheiro `index.html`.
+3. Clique em **Deploy**.
+
+---
+
+## ⚡ Personalização
+* **Para alterar o Link de Checkout:**
+  Abra o `index.html`, procure por `https://pay.kiwify.com.br/Kq2q3Te` e substitua pelo seu link de pagamento pretendido.
