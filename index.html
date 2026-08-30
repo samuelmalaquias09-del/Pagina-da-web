@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Jornada — Descubra o Seu Novo Caminho</title>
+    <title>A Jornada — Imersão & Ecossistema SaaS</title>
     <style>
         :root {
-            --bg-color: #08090a;
-            --card-bg: rgba(18, 22, 20, 0.6);
-            --border-color: rgba(0, 230, 118, 0.15);
-            --text-main: #f0f4f1;
-            --text-muted: #8b9b90;
-            --accent-emerald: #00e676;
-            --accent-glow: rgba(0, 230, 118, 0.25);
-            --gold-accent: #d4af37;
+            --bg-color: #0B0F17;
+            --card-bg: rgba(18, 26, 38, 0.7);
+            --border-color: rgba(0, 230, 118, 0.2);
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --accent-emerald: #00E676;
+            --accent-glow: rgba(0, 230, 118, 0.3);
+            --gold-accent: #F59E0B;
+            --whatsapp-color: #25D366;
         }
 
         * {
@@ -31,30 +32,26 @@
             overflow-x: hidden;
             min-height: 100vh;
             background-image: 
-                radial-gradient(circle at 50% 20%, rgba(0, 230, 118, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.03) 0%, transparent 40%);
+                radial-gradient(circle at 50% 10%, rgba(0, 230, 118, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(245, 158, 11, 0.04) 0%, transparent 40%);
         }
 
-        /* Container Layout */
         .page-container {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 2rem 1.5rem;
-            max-width: 900px;
+            padding: 3rem 1.5rem;
+            max-width: 960px;
             margin: 0 auto;
             position: relative;
         }
 
-        .hidden {
-            display: none !important;
-        }
+        .hidden { display: none !important; }
 
-        /* Animations */
         .fade-in {
-            animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         @keyframes fadeIn {
@@ -62,37 +59,23 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Ambient Lighting / Atmosphere */
-        .ambient-light {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: var(--accent-emerald);
-            filter: blur(150px);
-            opacity: 0.08;
-            pointer-events: none;
-            border-radius: 50%;
-            z-index: 0;
-        }
-
-        /* Page 1: Suspense Styles */
+        /* Página 1: Suspense Premium */
         .pre-title {
             color: var(--text-muted);
             font-size: 0.8rem;
             letter-spacing: 4px;
             text-transform: uppercase;
-            margin-bottom: 2rem;
-            font-weight: 500;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
         }
 
         .main-title-suspense {
-            font-size: clamp(2rem, 5vw, 3.2rem);
-            font-weight: 700;
-            line-height: 1.25;
-            letter-spacing: -0.5px;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.2;
             margin-bottom: 1.5rem;
             text-align: center;
-            background: linear-gradient(180deg, #FFFFFF 0%, #B0C4B1 100%);
+            background: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -100,7 +83,7 @@
         .sub-description {
             color: var(--text-muted);
             font-size: clamp(1rem, 2.5vw, 1.15rem);
-            max-width: 620px;
+            max-width: 650px;
             margin: 0 auto 1.5rem auto;
             text-align: center;
             font-weight: 300;
@@ -120,29 +103,21 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 6px;
-            height: 6px;
+            width: 8px;
+            height: 8px;
             background: var(--accent-emerald);
             border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent-emerald);
+            box-shadow: 0 0 12px var(--accent-emerald);
         }
 
-        .call-question {
-            font-size: 1rem;
-            color: var(--text-main);
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-        }
-
-        /* Buttons & Interactions */
+        /* Botões */
         .btn-cta {
-            background: linear-gradient(135deg, rgba(0, 230, 118, 0.1), rgba(0, 230, 118, 0.02));
+            background: linear-gradient(135deg, rgba(0, 230, 118, 0.2), rgba(0, 230, 118, 0.05));
             border: 1px solid var(--accent-emerald);
             color: var(--accent-emerald);
-            padding: 1.2rem 2.8rem;
-            font-size: 1rem;
-            font-weight: 600;
+            padding: 1.3rem 3rem;
+            font-size: 1.05rem;
+            font-weight: 700;
             letter-spacing: 1px;
             cursor: pointer;
             border-radius: 50px;
@@ -150,16 +125,15 @@
             text-decoration: none;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
-            box-shadow: 0 0 20px rgba(0, 230, 118, 0.1);
-            position: relative;
-            z-index: 10;
+            box-shadow: 0 0 25px rgba(0, 230, 118, 0.15);
         }
 
         .btn-cta:hover {
             background: var(--accent-emerald);
-            color: #000;
-            box-shadow: 0 0 35px rgba(0, 230, 118, 0.4);
+            color: #0B0F17;
+            box-shadow: 0 0 40px rgba(0, 230, 118, 0.5);
             transform: translateY(-3px);
         }
 
@@ -168,54 +142,30 @@
             margin-top: 0.8rem;
             font-size: 0.8rem;
             color: var(--text-muted);
-        }
-
-        /* Page 2: Revelation Styles */
-        .section-tag {
-            color: var(--accent-emerald);
-            font-size: 0.8rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .revelation-header {
             text-align: center;
-            margin-bottom: 3.5rem;
         }
 
-        .revelation-title {
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            background: linear-gradient(180deg, #FFFFFF 0%, #D0E0D5 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
+        /* Componentes High-Ticket Página 2 */
         .content-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
+            border-radius: 20px;
             padding: 2.5rem;
             margin-bottom: 2.5rem;
-            backdrop-filter: blur(10px);
-            text-align: left;
+            backdrop-filter: blur(12px);
             width: 100%;
         }
 
         .card-title {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             color: var(--accent-emerald);
-            margin-bottom: 1rem;
-            font-weight: 600;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
         }
 
-        /* Grid System for Benefits */
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 1.5rem;
             width: 100%;
             margin-bottom: 2.5rem;
@@ -224,271 +174,215 @@
         .benefit-box {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.8rem;
-            text-align: left;
+            border-radius: 16px;
+            padding: 2rem;
         }
 
         .benefit-box h4 {
             color: var(--accent-emerald);
             margin-bottom: 0.8rem;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
+        }
+
+        /* Vídeo / VSL Placeholder */
+        .video-container {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
             display: flex;
+            justify-content: center;
             align-items: center;
-            gap: 8px;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* 3 Steps Section */
-        .steps-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            width: 100%;
-            margin-bottom: 3rem;
-        }
-
-        .step-item {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 1.5rem;
-            border-radius: 12px;
+        /* Card de Ancoragem de Preço */
+        .pricing-card {
+            background: linear-gradient(180deg, rgba(18, 26, 38, 0.9) 0%, rgba(11, 15, 23, 0.95) 100%);
+            border: 2px solid var(--accent-emerald);
+            border-radius: 24px;
+            padding: 3rem 2rem;
             text-align: center;
-        }
-
-        .step-number {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--gold-accent);
-            margin-bottom: 0.3rem;
-        }
-
-        /* Schedule Table */
-        .routine-table {
             width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 0 50px rgba(0, 230, 118, 0.1);
         }
 
-        .routine-table th, .routine-table td {
-            padding: 0.8rem 1rem;
-            text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 0.95rem;
+        .old-price {
+            text-decoration: line-through;
+            color: var(--text-muted);
+            font-size: 1.2rem;
         }
 
-        .routine-table th {
+        .current-price {
+            font-size: clamp(2.5rem, 6vw, 3.8rem);
+            font-weight: 800;
+            color: var(--text-main);
+            margin: 0.5rem 0;
+        }
+
+        .current-price span {
             color: var(--accent-emerald);
+        }
+
+        /* FAQ Accordion */
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 1.2rem 0;
+            cursor: pointer;
+        }
+
+        .faq-question {
             font-weight: 600;
-        }
-
-        /* Earnings Projection */
-        .earnings-list {
-            list-style: none;
-            margin-top: 1rem;
-        }
-
-        .earnings-list li {
-            padding: 0.8rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        .faq-answer {
+            color: var(--text-muted);
             font-size: 0.95rem;
+            margin-top: 0.8rem;
+            display: none;
         }
 
-        .earnings-list span.val {
-            color: var(--accent-emerald);
-            font-weight: 700;
+        .faq-item.active .faq-answer {
+            display: block;
         }
 
-        /* Responsive Design */
+        /* Botão Flutuante WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--whatsapp-color);
+            color: #FFF;
+            border-radius: 50px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+        }
+
         @media (max-width: 768px) {
-            .steps-container {
-                grid-template-columns: 1fr;
-            }
-            .content-card {
-                padding: 1.5rem;
-            }
-            .earnings-list li {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 4px;
-            }
+            .pricing-card { padding: 2rem 1.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="ambient-light" style="top: 10%; left: 50%; transform: translateX(-50%);"></div>
-
-    <!-- ==================== PÁGINA 1: O SUSPENSE ==================== -->
+    <!-- PÁGINA 1: O SUSPENSE -->
     <section id="page-1" class="page-container fade-in">
         <p class="pre-title">ANTES DE CONTINUAR...</p>
+        <h1 class="main-title-suspense">E SE EXISTISSE UM CAMINHO QUE VOCÊ AINDA NÃO ENCONTROU?</h1>
+        <p class="sub-description">Talvez esteja a poucos passos de descobrir a estrutura necessária para construir um negócio digital escalável de alto valor.</p>
+        <p class="sub-description" style="font-size: 0.95rem; color: var(--text-muted);">Existe uma razão estratégica para tudo não ser revelado de imediato.</p>
         
-        <h1 class="main-title-suspense">
-            E SE EXISTISSE UM CAMINHO QUE VOCÊ AINDA NÃO ENCONTROU?
-        </h1>
-
-        <p class="sub-description">
-            Talvez esteja a poucos passos de descobrir algo que pode mudar radicalmente a forma como enxerga as suas próximas oportunidades financeiras e de vida.
-        </p>
-
-        <p class="sub-description" style="font-size: 0.95rem; color: #6c7c71;">
-            Mas existe uma razão para isto não estar a ser mostrado logo de início.
-        </p>
-
         <div class="suspense-divider"></div>
 
-        <p class="call-question">Está pronto para dar o próximo passo?</p>
-
-        <button class="btn-cta" onclick="showPage2()">
-            CONTINUAR A JORNADA &rarr;
-        </button>
-        
-        <span class="btn-subtext">Descubra o que vem a seguir.</span>
+        <p style="margin-bottom: 1.5rem;">Está pronto para dar o próximo passo?</p>
+        <button class="btn-cta" onclick="showPage2()">CONTINUAR A JORNADA &rarr;</button>
+        <span class="btn-subtext">Acesse a apresentação completa.</span>
     </section>
 
-    <!-- ==================== PÁGINA 2: A REVELAÇÃO ==================== -->
+    <!-- PÁGINA 2: A REVELAÇÃO HIGH-TICKET -->
     <section id="page-2" class="page-container hidden">
-        <div class="revelation-header fade-in">
-            <p class="section-tag">AGORA VOCÊ PODE VER O QUE ESTAVA POR TRÁS DESTA JORNADA</p>
-            <h1 class="revelation-title">O PRÓXIMO PASSO COMEÇA AQUI.</h1>
-            <p class="sub-description">
-                A oportunidade de construir a sua própria liberdade criando e gerindo o seu negócio de SaaS a partir de casa.
-            </p>
+        <div style="text-align: center; margin-bottom: 3rem;" class="fade-in">
+            <p class="pre-title" style="color: var(--accent-emerald);">A REVELAÇÃO DA SUA NOVA JORNADA</p>
+            <h1 class="main-title-suspense">O ECOSSISTEMA COMPLETO DE SAAS</h1>
+            <p class="sub-description">Aprenda a construir, lançar e escalar o seu próprio Software como Serviço a partir do zero.</p>
         </div>
 
-        <!-- Bloco de Funcionamento -->
-        <div class="content-card fade-in">
-            <h3 class="card-title">A Transformação do Trabalho em Casa</h3>
-            <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7;">
-                Trabalhar do conforto da sua casa usando o modelo de SaaS (Software como Serviço) permite-lhe eliminar o tempo perdido no trânsito e assumir o controlo total do seu tempo. Aprenda a criar, validar e vender soluções automatizadas que geram receitas recorrentes mês após mês.
-            </p>
+        <!-- VSL / Vídeo de Apresentação -->
+        <div class="video-container fade-in">
+            <p style="color: var(--text-muted);">[ Espaço reservado para o Vídeo de Vendas / VSL High-Ticket ]</p>
         </div>
 
-        <!-- 3 Blocos de Benefícios -->
+        <!-- Blocos de Entregáveis -->
         <div class="benefits-grid fade-in">
             <div class="benefit-box">
-                <h4>✓ O que vai descobrir</h4>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">
-                    O método exato para idealizar, desenvolver sem complicações e lançar o seu próprio SaaS lucrativo no mercado.
-                </p>
+                <h4>✓ Método Passo a Passo</h4>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Construção guiada da sua solução SaaS sem necessidade de programar do zero.</p>
             </div>
             <div class="benefit-box">
-                <h4>✓ Como funciona</h4>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">
-                    Estruturas automatizadas que trabalham 24 horas por dia, permitindo-lhe escalar vendas sem aumentar a sua carga horária.
-                </p>
+                <h4>✓ Aquisição de Clientes</h4>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Estratégias de vendas diretas e automação para atrair assinantes de alta fidelidade.</p>
             </div>
             <div class="benefit-box">
-                <h4>✓ O que pode aplicar</h4>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">
-                    Modelos práticos de gestão diária, estratégias de atração de clientes e rotinas de alta produtividade.
-                </p>
+                <h4>✓ Acompanhamento & Suporte</h4>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Sessões estratégicas para garantir a validação e execução do seu projeto.</p>
             </div>
         </div>
 
-        <!-- Jornada em 3 Etapas -->
-        <div class="steps-container fade-in">
-            <div class="step-item">
-                <div class="step-number">01</div>
-                <strong style="display:block; margin-bottom: 5px;">DESCUBRA</strong>
-                <span style="font-size: 0.85rem; color: var(--text-muted);">Identifique nichos altamente lucrativos.</span>
-            </div>
-            <div class="step-item">
-                <div class="step-number">02</div>
-                <strong style="display:block; margin-bottom: 5px;">APRENDA</strong>
-                <span style="font-size: 0.85rem; color: var(--text-muted);">Construa a sua plataforma passo a passo.</span>
-            </div>
-            <div class="step-item">
-                <div class="step-number">03</div>
-                <strong style="display:block; margin-bottom: 5px;">APLIQUE</strong>
-                <span style="font-size: 0.85rem; color: var(--text-muted);">Venda e receba assinaturas recorrentes.</span>
-            </div>
-        </div>
-
-        <!-- Rotina Recomendada -->
+        <!-- Bônus Exclusivos -->
         <div class="content-card fade-in">
-            <h3 class="card-title">Rotina de Alta Produtividade em Casa</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">
-                A chave para o sucesso a trabalhar em casa é ter uma rotina bem regulada para evitar distrações e manter o foco:
-            </p>
-            <table class="routine-table">
-                <thead>
-                    <tr>
-                        <th>Período</th>
-                        <th>Atividade</th>
-                        <th>Foco principal</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Manhã (08h - 12h)</strong></td>
-                        <td>Construção & Desenvolvimento</td>
-                        <td>Execução das tarefas de maior prioridade.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Tarde (13h30 - 17h30)</strong></td>
-                        <td>Marketing & Atendimento</td>
-                        <td>Atração de clientes e melhorias do serviço.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Noite (A partir das 18h)</strong></td>
-                        <td>Desconexão Total</td>
-                        <td>Descanso, família e lazer consciente.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Projeção Financeira e Persistência -->
-        <div class="content-card fade-in">
-            <h3 class="card-title">Projeção de Ganhos e a Importância de Persistir</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">
-                O sucesso em modelos de subscrição constrói-se com consistência. Ao não desistir nos primeiros meses, o efeito acumulativo dos assinantes gera uma receita sólida:
-            </p>
-            <ul class="earnings-list">
-                <li>
-                    <span><strong>1º ao 3º Mês:</strong> Fase de Ajuste e Primeiros Clientes</span>
-                    <span class="val">R$ 1.500 a R$ 3.000 / mês</span>
+            <h3 class="card-title">🎁 Bônus Exclusivos Inclusos</h3>
+            <ul style="list-style: none;">
+                <li style="margin-bottom: 1rem; color: var(--text-muted);">
+                    <strong style="color: #FFF;">Bônus 1:</strong> Templates de Vendas e Páginas Prontas <span style="color: var(--gold-accent);">(Valor: R$ 997,00)</span>
                 </li>
-                <li>
-                    <span><strong>4º ao 6º Mês:</strong> Validação e Escala</span>
-                    <span class="val">R$ 3.500 a R$ 6.000 / mês</span>
+                <li style="margin-bottom: 1rem; color: var(--text-muted);">
+                    <strong style="color: #FFF;">Bônus 2:</strong> Script de Fechamento High-Ticket para WhatsApp <span style="color: var(--gold-accent);">(Valor: R$ 497,00)</span>
                 </li>
-                <li>
-                    <span><strong>Longo Prazo (Consistência):</strong> Recorrência Consolidada</span>
-                    <span class="val">+ R$ 10.000 / mês</span>
+                <li style="color: var(--text-muted);">
+                    <strong style="color: #FFF;">Bônus 3:</strong> Comunidade Fechada de Fundadores de SaaS <span style="color: var(--gold-accent);">(Valor: R$ 1.200,00)</span>
                 </li>
             </ul>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1.2rem; font-style: italic;">
-                "Quem persiste nos primeiros obstáculos é quem colhe a verdadeira liberdade geográfica e financeira."
-            </p>
         </div>
 
-        <!-- Call To Action Final (Checkout Kiwify) -->
-        <div style="text-align: center; margin-top: 1.5rem; width: 100%;" class="fade-in">
-            <a href="https://pay.kiwify.com.br/Kq2q3Te" class="btn-cta" target="_blank" rel="noopener noreferrer">
-                QUERO COMEÇAR A JORNADA &rarr;
+        <!-- Oferta e Ancoragem de Preço -->
+        <div class="pricing-card fade-in">
+            <p style="color: var(--gold-accent); font-weight: 700; font-size: 0.9rem; letter-spacing: 2px;">CONDIÇÃO ESPECIAL DE ADESÃO</p>
+            <p class="old-price" style="margin-top: 0.5rem;">De R$ 7.691,00 por apenas:</p>
+            <div class="current-price">12x <span>R$ 399,70</span></div>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">ou R$ 3.997,00 à vista</p>
+            
+            <a href="https://pay.kiwify.com.br/Kq2q3Te" class="btn-cta" target="_blank" rel="noopener noreferrer" style="width: 100%;">
+                GARANTIR MINHA VAGA AGORA &rarr;
             </a>
-            <span class="btn-subtext" style="margin-top: 1rem;">
-                Acesso imediativo após a confirmação do pagamento no checkout seguro.
-            </span>
+            <span class="btn-subtext" style="margin-top: 1rem;">Garantia incondicional de 7 dias. Risco zero.</span>
+        </div>
+
+        <!-- FAQ -->
+        <div class="content-card fade-in">
+            <h3 class="card-title">Perguntas Frequentes</h3>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">Preciso saber programar para criar meu SaaS? <span>+</span></div>
+                <div class="faq-answer">Não. O treinamento ensina como utilizar ferramentas no-code/low-code e parcerias estratégicas para lançar sua plataforma.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">Como funciona a garantia de 7 dias? <span>+</span></div>
+                <div class="faq-answer">Se dentro de 7 dias você entender que este modelo não é para você, basta solicitar o reembolso e devolveremos 100% do valor investido.</div>
+            </div>
         </div>
     </section>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/SEUNUMERO" target="_blank" class="whatsapp-float">
+        💬 Dúvidas? Fale Conosco
+    </a>
 
     <script>
         function showPage2() {
-            const page1 = document.getElementById('page-1');
+            document.getElementById('page-1').classList.add('hidden');
             const page2 = document.getElementById('page-2');
-
-            page1.classList.add('hidden');
             page2.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        function toggleFaq(element) {
+            element.classList.toggle('active');
         }
     </script>
 </body>
