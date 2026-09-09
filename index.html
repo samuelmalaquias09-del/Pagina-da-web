@@ -1,389 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Jornada — Imersão & Ecossistema SaaS</title>
-    <style>
-        :root {
-            --bg-color: #0B0F17;
-            --card-bg: rgba(18, 26, 38, 0.7);
-            --border-color: rgba(0, 230, 118, 0.2);
-            --text-main: #F8FAFC;
-            --text-muted: #94A3B8;
-            --accent-emerald: #00E676;
-            --accent-glow: rgba(0, 230, 118, 0.3);
-            --gold-accent: #F59E0B;
-            --whatsapp-color: #25D366;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-            min-height: 100vh;
-            background-image: 
-                radial-gradient(circle at 50% 10%, rgba(0, 230, 118, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(245, 158, 11, 0.04) 0%, transparent 40%);
-        }
-
-        .page-container {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 3rem 1.5rem;
-            max-width: 960px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .hidden { display: none !important; }
-
-        .fade-in {
-            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Página 1: Suspense Premium */
-        .pre-title {
-            color: var(--text-muted);
-            font-size: 0.8rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        .main-title-suspense {
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            text-align: center;
-            background: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .sub-description {
-            color: var(--text-muted);
-            font-size: clamp(1rem, 2.5vw, 1.15rem);
-            max-width: 650px;
-            margin: 0 auto 1.5rem auto;
-            text-align: center;
-            font-weight: 300;
-        }
-
-        .suspense-divider {
-            width: 1px;
-            height: 60px;
-            background: linear-gradient(180deg, transparent, var(--accent-emerald), transparent);
-            margin: 2.5rem auto;
-            position: relative;
-        }
-
-        .suspense-divider::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 8px;
-            height: 8px;
-            background: var(--accent-emerald);
-            border-radius: 50%;
-            box-shadow: 0 0 12px var(--accent-emerald);
-        }
-
-        /* Botões */
-        .btn-cta {
-            background: linear-gradient(135deg, rgba(0, 230, 118, 0.2), rgba(0, 230, 118, 0.05));
-            border: 1px solid var(--accent-emerald);
-            color: var(--accent-emerald);
-            padding: 1.3rem 3rem;
-            font-size: 1.05rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            cursor: pointer;
-            border-radius: 50px;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            box-shadow: 0 0 25px rgba(0, 230, 118, 0.15);
-        }
-
-        .btn-cta:hover {
-            background: var(--accent-emerald);
-            color: #0B0F17;
-            box-shadow: 0 0 40px rgba(0, 230, 118, 0.5);
-            transform: translateY(-3px);
-        }
-
-        .btn-subtext {
-            display: block;
-            margin-top: 0.8rem;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            text-align: center;
-        }
-
-        /* Componentes High-Ticket Página 2 */
-        .content-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 2.5rem;
-            margin-bottom: 2.5rem;
-            backdrop-filter: blur(12px);
-            width: 100%;
-        }
-
-        .card-title {
-            font-size: 1.5rem;
-            color: var(--accent-emerald);
-            margin-bottom: 1.2rem;
-            font-weight: 700;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-            width: 100%;
-            margin-bottom: 2.5rem;
-        }
-
-        .benefit-box {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem;
-        }
-
-        .benefit-box h4 {
-            color: var(--accent-emerald);
-            margin-bottom: 0.8rem;
-            font-size: 1.15rem;
-        }
-
-        /* Vídeo / VSL Placeholder */
-        .video-container {
-            width: 100%;
-            aspect-ratio: 16/9;
-            background: #000;
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        /* Card de Ancoragem de Preço */
-        .pricing-card {
-            background: linear-gradient(180deg, rgba(18, 26, 38, 0.9) 0%, rgba(11, 15, 23, 0.95) 100%);
-            border: 2px solid var(--accent-emerald);
-            border-radius: 24px;
-            padding: 3rem 2rem;
-            text-align: center;
-            width: 100%;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 0 50px rgba(0, 230, 118, 0.1);
-        }
-
-        .old-price {
-            text-decoration: line-through;
-            color: var(--text-muted);
-            font-size: 1.2rem;
-        }
-
-        .current-price {
-            font-size: clamp(2.5rem, 6vw, 3.8rem);
-            font-weight: 800;
-            color: var(--text-main);
-            margin: 0.5rem 0;
-        }
-
-        .current-price span {
-            color: var(--accent-emerald);
-        }
-
-        /* FAQ Accordion */
-        .faq-item {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 1.2rem 0;
-            cursor: pointer;
-        }
-
-        .faq-question {
-            font-weight: 600;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .faq-answer {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-top: 0.8rem;
-            display: none;
-        }
-
-        .faq-item.active .faq-answer {
-            display: block;
-        }
-
-        /* Botão Flutuante WhatsApp */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background-color: var(--whatsapp-color);
-            color: #FFF;
-            border-radius: 50px;
-            padding: 12px 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-            text-decoration: none;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            z-index: 100;
-            transition: transform 0.3s ease;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 768px) {
-            .pricing-card { padding: 2rem 1.5rem; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Árbitros: Ontem e Hoje</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- PÁGINA 1: O SUSPENSE -->
-    <section id="page-1" class="page-container fade-in">
-        <p class="pre-title">ANTES DE CONTINUAR...</p>
-        <h1 class="main-title-suspense">E SE EXISTISSE UM CAMINHO QUE VOCÊ AINDA NÃO ENCONTROU?</h1>
-        <p class="sub-description">Talvez esteja a poucos passos de descobrir a estrutura necessária para construir um negócio digital escalável de alto valor.</p>
-        <p class="sub-description" style="font-size: 0.95rem; color: var(--text-muted);">Existe uma razão estratégica para tudo não ser revelado de imediato.</p>
-        
-        <div class="suspense-divider"></div>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="whistle-line">APITO, CARTÃO E HISTÓRIA</div>
+    <h1>Quem manda<br>em campo <span>não é</span><br>só o placar.</h1>
+    <p>Um retrato de duas gerações de árbitros do futebol brasileiro: os que apitam os jogos de hoje e os que construíram a autoridade da arbitragem no passado. Vote com like ou dislike em cada um.</p>
+  </div>
+</header>
 
-        <p style="margin-bottom: 1.5rem;">Está pronto para dar o próximo passo?</p>
-        <button class="btn-cta" onclick="showPage2()">CONTINUAR A JORNADA &rarr;</button>
-        <span class="btn-subtext">Acesse a apresentação completa.</span>
-    </section>
+<section class="section now">
+  <div class="section-head">
+    <h2>Árbitros de hoje</h2>
+    <div class="tag">Em atividade nas principais competições do futebol brasileiro atual</div>
+  </div>
+  <div class="grid" id="grid-now"></div>
+</section>
 
-    <!-- PÁGINA 2: A REVELAÇÃO HIGH-TICKET -->
-    <section id="page-2" class="page-container hidden">
-        <div style="text-align: center; margin-bottom: 3rem;" class="fade-in">
-            <p class="pre-title" style="color: var(--accent-emerald);">A REVELAÇÃO DA SUA NOVA JORNADA</p>
-            <h1 class="main-title-suspense">O ECOSSISTEMA COMPLETO DE SAAS</h1>
-            <p class="sub-description">Aprenda a construir, lançar e escalar o seu próprio Software como Serviço a partir do zero.</p>
-        </div>
+<section class="section old">
+  <div class="section-head">
+    <h2>Árbitros de antes</h2>
+    <div class="tag">Nomes que definiram gerações e ainda são lembrados pela forma como apitavam</div>
+  </div>
+  <div class="grid" id="grid-old"></div>
+</section>
 
-        <!-- VSL / Vídeo de Apresentação -->
-        <div class="video-container fade-in">
-            <p style="color: var(--text-muted);">[ Espaço reservado para o Vídeo de Vendas / VSL High-Ticket ]</p>
-        </div>
+<footer>
+  <span>Página feita para comparar gerações de arbitragem — sem vínculo oficial com CBF ou FIFA.</span>
+  <span id="total-votes">0 votos registrados</span>
+</footer>
 
-        <!-- Blocos de Entregáveis -->
-        <div class="benefits-grid fade-in">
-            <div class="benefit-box">
-                <h4>✓ Método Passo a Passo</h4>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">Construção guiada da sua solução SaaS sem necessidade de programar do zero.</p>
-            </div>
-            <div class="benefit-box">
-                <h4>✓ Aquisição de Clientes</h4>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">Estratégias de vendas diretas e automação para atrair assinantes de alta fidelidade.</p>
-            </div>
-            <div class="benefit-box">
-                <h4>✓ Acompanhamento & Suporte</h4>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">Sessões estratégicas para garantir a validação e execução do seu projeto.</p>
-            </div>
-        </div>
-
-        <!-- Bônus Exclusivos -->
-        <div class="content-card fade-in">
-            <h3 class="card-title">🎁 Bônus Exclusivos Inclusos</h3>
-            <ul style="list-style: none;">
-                <li style="margin-bottom: 1rem; color: var(--text-muted);">
-                    <strong style="color: #FFF;">Bônus 1:</strong> Templates de Vendas e Páginas Prontas <span style="color: var(--gold-accent);">(Valor: R$ 997,00)</span>
-                </li>
-                <li style="margin-bottom: 1rem; color: var(--text-muted);">
-                    <strong style="color: #FFF;">Bônus 2:</strong> Script de Fechamento High-Ticket para WhatsApp <span style="color: var(--gold-accent);">(Valor: R$ 497,00)</span>
-                </li>
-                <li style="color: var(--text-muted);">
-                    <strong style="color: #FFF;">Bônus 3:</strong> Comunidade Fechada de Fundadores de SaaS <span style="color: var(--gold-accent);">(Valor: R$ 1.200,00)</span>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Oferta e Ancoragem de Preço -->
-        <div class="pricing-card fade-in">
-            <p style="color: var(--gold-accent); font-weight: 700; font-size: 0.9rem; letter-spacing: 2px;">CONDIÇÃO ESPECIAL DE ADESÃO</p>
-            <p class="old-price" style="margin-top: 0.5rem;">De R$ 7.691,00 por apenas:</p>
-            <div class="current-price">12x <span>R$ 399,70</span></div>
-            <p style="color: var(--text-muted); margin-bottom: 2rem;">ou R$ 3.997,00 à vista</p>
-            
-            <a href="https://pay.kiwify.com.br/Kq2q3Te" class="btn-cta" target="_blank" rel="noopener noreferrer" style="width: 100%;">
-                GARANTIR MINHA VAGA AGORA &rarr;
-            </a>
-            <span class="btn-subtext" style="margin-top: 1rem;">Garantia incondicional de 7 dias. Risco zero.</span>
-        </div>
-
-        <!-- FAQ -->
-        <div class="content-card fade-in">
-            <h3 class="card-title">Perguntas Frequentes</h3>
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">Preciso saber programar para criar meu SaaS? <span>+</span></div>
-                <div class="faq-answer">Não. O treinamento ensina como utilizar ferramentas no-code/low-code e parcerias estratégicas para lançar sua plataforma.</div>
-            </div>
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">Como funciona a garantia de 7 dias? <span>+</span></div>
-                <div class="faq-answer">Se dentro de 7 dias você entender que este modelo não é para você, basta solicitar o reembolso e devolveremos 100% do valor investido.</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Botão Flutuante do WhatsApp -->
-    <a href="https://wa.me/SEUNUMERO" target="_blank" class="whatsapp-float">
-        💬 Dúvidas? Fale Conosco
-    </a>
-
-    <script>
-        function showPage2() {
-            document.getElementById('page-1').classList.add('hidden');
-            const page2 = document.getElementById('page-2');
-            page2.classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function toggleFaq(element) {
-            element.classList.toggle('active');
-        }
-    </script>
+<script src="script.js"></script>
 </body>
 </html>
